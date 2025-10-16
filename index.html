@@ -27,10 +27,10 @@
       -webkit-text-size-adjust: 100%;
       -webkit-tap-highlight-color: transparent;
       -webkit-touch-callout: none;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
+      -webkit-user-select: text;
+      -moz-user-select: text;
+      -ms-user-select: text;
+      user-select: text;
       touch-action: manipulation;
     }
     
@@ -189,7 +189,7 @@
     .flip-card::before {
       content: "حط الماوس بعيد عشان ترجع العربي";
       position: absolute;
-      top: -30px;
+      top: -60px;
       left: 50%;
       transform: translateX(-50%);
       background: rgba(173, 216, 230, 0.8);
@@ -706,12 +706,12 @@
     
     .birthday-popup {
       position: fixed;
-      background: linear-gradient(135deg, rgba(10, 26, 42, 0.98) 0%, rgba(26, 42, 58, 0.95) 100%);
-      backdrop-filter: blur(25px);
-      border: 1px solid rgba(135, 206, 250, 0.4);
+      background: rgba(135, 206, 250, 0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(135, 206, 250, 0.3);
       border-radius: 20px;
       padding: 30px;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(135, 206, 250, 0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
       z-index: 10000;
       min-width: 320px;
       max-width: 400px;
@@ -746,6 +746,7 @@
         font-size: 1em;
         margin-bottom: 20px;
         padding: 8px 12px;
+        border-radius: 10px;
       }
       
       .countdown-container {
@@ -754,7 +755,8 @@
       }
       
       .countdown-item {
-        padding: 6px 4px;
+        padding: 8px 6px;
+        border-radius: 10px;
       }
       
       .countdown-number {
@@ -769,6 +771,7 @@
         font-size: 1em;
         margin-top: 15px;
         padding: 12px 15px;
+        border-radius: 10px;
       }
     }
     
@@ -780,7 +783,7 @@
     
     .birthday-title {
       font-size: 1.4em;
-      font-weight: 700;
+      font-weight: 600;
       color: #87ceeb;
       margin-bottom: 20px;
       text-align: center;
@@ -793,10 +796,11 @@
       color: #b0e0e6;
       margin-bottom: 25px;
       font-weight: 500;
-      background: rgba(135, 206, 250, 0.1);
+      background: rgba(135, 206, 250, 0.08);
       padding: 10px 15px;
-      border-radius: 10px;
+      border-radius: 12px;
       border: 1px solid rgba(135, 206, 250, 0.2);
+      transition: all 0.5s ease-in-out;
     }
     
     .countdown-container {
@@ -809,9 +813,9 @@
     .countdown-item {
       text-align: center;
       background: rgba(135, 206, 250, 0.08);
-      border: 0.5px solid rgba(135, 206, 250, 0.15);
-      border-radius: 8px;
-      padding: 8px 6px;
+      border: 1px solid rgba(135, 206, 250, 0.2);
+      border-radius: 12px;
+      padding: 12px 16px;
       transition: all 0.3s ease;
       display: flex;
       flex-direction: column;
@@ -821,13 +825,13 @@
     
     .countdown-item:hover {
       background: rgba(135, 206, 250, 0.15);
-      border-color: rgba(135, 206, 250, 0.3);
-      transform: translateY(-2px);
+      border-color: rgba(135, 206, 250, 0.4);
+      transform: translateX(-3px);
     }
     
     .countdown-number {
       font-size: 1.2em;
-      font-weight: 700;
+      font-weight: 600;
       color: #87ceeb;
       display: block;
       text-align: center;
@@ -843,6 +847,7 @@
       letter-spacing: 0.5px;
       text-align: center;
       display: block;
+      transition: all 0.5s ease-in-out;
     }
     
     .birthday-age {
@@ -852,9 +857,11 @@
       margin-top: 20px;
       padding: 15px 20px;
       border-top: 1px solid rgba(135, 206, 250, 0.2);
-      background: rgba(135, 206, 250, 0.05);
-      border-radius: 10px;
+      background: rgba(135, 206, 250, 0.08);
+      border-radius: 12px;
       text-shadow: 0 0 5px rgba(191, 239, 255, 0.3);
+      border: 1px solid rgba(135, 206, 250, 0.2);
+      transition: all 0.5s ease-in-out;
     }
     
     .loading-bar-container {
@@ -864,8 +871,8 @@
       transform: translateX(-50%);
       width: 70%;
       height: 4px;
-      background: rgba(10, 26, 42, 0.8);
-      border-radius: 2px;
+      background: rgba(135, 206, 250, 0.2);
+      border-radius: 3px;
       overflow: hidden;
       border: 1px solid rgba(135, 206, 250, 0.3);
       box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -878,7 +885,7 @@
         #b0e0e6 30%, 
         #87ceeb 60%, 
         #87ceeb 100%);
-      animation: loading-progress 10s linear infinite;
+      animation: loading-progress 10s linear;
       transform-origin: left;
       position: relative;
       box-shadow: 0 0 6px rgba(135, 206, 250, 0.8);
@@ -918,6 +925,661 @@
       }
     }
     
+    .language-button-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1001;
+    }
+
+    .language-menu-container {
+      position: fixed;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      z-index: 1000;
+    }
+    
+    .language-toggle-btn {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, 
+        rgba(135, 206, 250, 0.15) 0%, 
+        rgba(176, 224, 230, 0.1) 50%, 
+        rgba(191, 239, 255, 0.2) 100%);
+      backdrop-filter: blur(20px);
+      border: 2px solid rgba(135, 206, 250, 0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      position: relative;
+      z-index: 1001;
+      overflow: hidden;
+    }
+    
+    .language-toggle-btn:hover {
+      transform: scale(1.1);
+      background: linear-gradient(135deg, 
+        rgba(135, 206, 250, 0.25) 0%, 
+        rgba(176, 224, 230, 0.2) 50%, 
+        rgba(191, 239, 255, 0.3) 100%);
+      border-color: #87ceeb;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+    }
+    
+    .language-toggle-btn:active {
+      transform: scale(1.05);
+    }
+    
+    .language-icon {
+      width: 28px;
+      height: 28px;
+      fill: #87ceeb;
+      transition: all 0.3s ease;
+    }
+    
+    .language-toggle-btn:hover .language-icon {
+      fill: #b0e0e6;
+      transform: rotate(10deg) scale(1.05);
+    }
+    
+    .language-menu {
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: translateX(100%);
+      background: rgba(135, 206, 250, 0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(135, 206, 250, 0.3);
+      border-radius: 20px;
+      padding: 0;
+      width: 320px;
+      min-width: 320px;
+      max-width: 320px;
+      height: 450px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .language-menu::after {
+      content: '';
+      position: absolute;
+      right: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-left: 10px solid rgba(135, 206, 250, 0.3);
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+    }
+    
+    .language-menu.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+    }
+    
+    .menu-header {
+      padding: 20px 20px 16px 20px;
+      border-bottom: 1px solid rgba(135, 206, 250, 0.2);
+      position: relative;
+    }
+    
+    .menu-close-btn {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      width: 28px;
+      height: 28px;
+      background: rgba(135, 206, 250, 0.1);
+      border: none;
+      border-radius: 50%;
+      color: #87ceeb;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      font-size: 14px;
+    }
+    
+    .menu-close-btn:hover {
+      background: rgba(135, 206, 250, 0.2);
+      transform: scale(1.1);
+    }
+    
+    .menu-artist-section {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .menu-artist-image {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #87ceeb 0%, #b0e0e6 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #0a1a2a;
+    }
+    
+    .menu-artist-info h2 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #87ceeb;
+      margin: 0 0 4px 0;
+      min-height: 24px;
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    .menu-artist-subtitle {
+      font-size: 12px;
+      color: #b0e0e6;
+      margin: 0;
+      min-height: 16px;
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    .menu-tracks-section {
+      flex: 1;
+      padding: 16px 20px 0 20px;
+      overflow-y: auto;
+    }
+    
+    .menu-tracks-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #87ceeb;
+      margin: 0 0 12px 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .menu-tracks-title::before {
+      content: '|';
+      color: rgba(135, 206, 250, 0.4);
+      font-weight: 300;
+    }
+    
+    .mini-player {
+      padding: 16px 20px 20px 20px;
+      border-top: 1px solid rgba(135, 206, 250, 0.2);
+      background: rgba(135, 206, 250, 0.05);
+      display: none;
+    }
+    
+    .mini-player.show {
+      display: block;
+    }
+    
+    .mini-player-content {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .mini-player-info {
+      flex: 1;
+      min-width: 0;
+    }
+    
+    .mini-player-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #87ceeb;
+      margin: 0 0 2px 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    .mini-player-subtitle {
+      font-size: 11px;
+      color: #b0e0e6;
+      margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    .mini-player-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .mini-player-btn {
+      width: 32px;
+      height: 32px;
+      background: rgba(135, 206, 250, 0.1);
+      border: 1px solid rgba(135, 206, 250, 0.3);
+      border-radius: 50%;
+      color: #87ceeb;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      font-size: 12px;
+    }
+    
+    .mini-player-btn:hover {
+      background: rgba(135, 206, 250, 0.2);
+      transform: scale(1.1);
+    }
+    
+    .mini-player-progress {
+      margin-top: 8px;
+    }
+    
+    .mini-player-progress-bar {
+      width: 100%;
+      height: 4px;
+      background: rgba(135, 206, 250, 0.2);
+      border-radius: 2px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    
+    .mini-player-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #87ceeb, #b0e0e6);
+      border-radius: 2px;
+      width: 0%;
+      transition: width 0.1s ease;
+    }
+    
+    .mini-player-time {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 4px;
+      font-size: 10px;
+      color: #b0e0e6;
+    }
+    
+    .language-options {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    
+    .language-option {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: rgba(135, 206, 250, 0.08);
+      border: 1px solid rgba(135, 206, 250, 0.2);
+      border-radius: 12px;
+      color: #b0e0e6;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+    }
+    
+    .language-option:hover {
+      background: rgba(135, 206, 250, 0.15);
+      border-color: rgba(135, 206, 250, 0.4);
+      color: #87ceeb;
+      transform: translateX(-3px);
+    }
+    
+    .language-option.playing {
+      background: rgba(135, 206, 250, 0.2);
+      border-color: #87ceeb;
+      color: #87ceeb;
+    }
+    
+    .language-option-number {
+      font-size: 16px;
+      font-weight: 600;
+      color: rgba(135, 206, 250, 0.6);
+      min-width: 20px;
+      text-align: center;
+    }
+    
+    .language-option.playing .language-option-number {
+      color: #87ceeb;
+    }
+    
+    .language-option-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    
+    .language-text {
+      font-size: 14px;
+      font-weight: 600;
+      color: inherit;
+      margin: 0;
+      min-height: 18px;
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    .language-subtitle {
+      font-size: 11px;
+      color: rgba(176, 224, 230, 0.7);
+      margin: 0;
+      min-height: 14px;
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    .play-icon {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+      opacity: 0.6;
+      transition: all 0.3s ease;
+    }
+    
+    .language-option:hover .play-icon {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+    
+    .language-option.playing .play-icon {
+      opacity: 1;
+      animation: bounce 0.8s ease-in-out infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+    }
+    
+    .audio-progress-container {
+      margin-top: 10px;
+      display: none;
+    }
+    
+    .audio-progress-container.show {
+      display: block;
+    }
+    
+    .audio-progress-bar {
+      width: 100%;
+      height: 6px;
+      background: rgba(135, 206, 250, 0.2);
+      border-radius: 3px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .audio-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #87ceeb, #b0e0e6);
+      border-radius: 3px;
+      width: 0%;
+      transition: width 0.1s ease;
+    }
+    
+    .audio-time-info {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 5px;
+      font-size: 0.8em;
+      color: #b0e0e6;
+    }
+    
+    @media screen and (max-width: 768px) {
+      .language-button-container {
+        right: 15px;
+        bottom: 15px;
+      }
+      
+      .language-menu-container {
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+      }
+      
+      .language-toggle-btn {
+        width: 55px;
+        height: 55px;
+      }
+      
+      .language-icon {
+        width: 24px;
+        height: 24px;
+      }
+      
+      .language-menu {
+        right: 0;
+        top: auto;
+        bottom: 80px;
+        transform: translateY(0) translateX(100%);
+        width: 280px;
+        min-width: 280px;
+        max-width: 280px;
+        height: 380px;
+      }
+      
+      .language-menu.show {
+        transform: translateX(0);
+      }
+      
+      .language-menu::after {
+        right: -10px;
+        top: auto;
+        bottom: 30px;
+        transform: none;
+        border-left: 10px solid rgba(135, 206, 250, 0.3);
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+      }
+      
+      .menu-header {
+        padding: 16px 16px 12px 16px;
+      }
+      
+      .menu-artist-section {
+        gap: 10px;
+      }
+      
+      .menu-artist-image {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+      }
+      
+      .menu-artist-info h2 {
+        font-size: 16px;
+      }
+      
+      .menu-artist-subtitle {
+        font-size: 11px;
+      }
+      
+      .menu-tracks-section {
+        padding: 12px 16px 16px 16px;
+      }
+      
+      .language-option {
+        padding: 10px 12px;
+        gap: 10px;
+      }
+      
+      .language-option-number {
+        font-size: 14px;
+        min-width: 18px;
+      }
+      
+      .language-text {
+        font-size: 13px;
+      }
+      
+      .language-subtitle {
+        font-size: 10px;
+      }
+      
+      .play-icon {
+        width: 14px;
+        height: 14px;
+      }
+      
+      .mini-player {
+        padding: 12px 16px 16px 16px;
+      }
+      
+      .mini-player-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 10px;
+      }
+      
+      .mini-player-title {
+        font-size: 12px;
+      }
+      
+      .mini-player-subtitle {
+        font-size: 10px;
+      }
+      
+      .mini-player-time {
+        font-size: 9px;
+      }
+    }
+    
+    @media screen and (max-width: 480px) {
+      .language-button-container {
+        right: 10px;
+        bottom: 80px;
+      }
+      
+      .language-menu-container {
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+      }
+      
+      .language-toggle-btn {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .language-icon {
+        width: 22px;
+        height: 22px;
+      }
+      
+      .language-menu {
+        width: 260px;
+        min-width: 260px;
+        max-width: 260px;
+        height: 320px;
+      }
+      
+      .menu-header {
+        padding: 14px 14px 10px 14px;
+      }
+      
+      .menu-artist-section {
+        gap: 8px;
+      }
+      
+      .menu-artist-image {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+      }
+      
+      .menu-artist-info h2 {
+        font-size: 15px;
+      }
+      
+      .menu-artist-subtitle {
+        font-size: 10px;
+      }
+      
+      .menu-tracks-section {
+        padding: 10px 14px 14px 14px;
+      }
+      
+      .language-option {
+        padding: 8px 10px;
+        gap: 8px;
+      }
+      
+      .language-option-number {
+        font-size: 13px;
+        min-width: 16px;
+      }
+      
+      .language-text {
+        font-size: 12px;
+      }
+      
+      .language-subtitle {
+        font-size: 9px;
+      }
+      
+      .play-icon {
+        width: 12px;
+        height: 12px;
+      }
+      
+      .mini-player {
+        padding: 10px 14px 14px 14px;
+      }
+      
+      .mini-player-btn {
+        width: 26px;
+        height: 26px;
+        font-size: 9px;
+      }
+      
+      .mini-player-title {
+        font-size: 11px;
+      }
+      
+      .mini-player-subtitle {
+        font-size: 9px;
+      }
+      
+      .mini-player-time {
+        font-size: 8px;
+      }
+    }
+    
   </style>
 </head>
 <body dir="rtl">
@@ -941,57 +1603,131 @@
     <div class="particle"></div>
   </div>
   
+  <div class="language-button-container">
+    <button class="language-toggle-btn" id="languageToggleBtn">
+      <svg class="language-icon" viewBox="0 0 24 24">
+        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="language-menu-container">
+    
+    <div class="language-menu" id="languageMenu">
+      <div class="menu-header">
+        <button class="menu-close-btn" id="menuCloseBtn">×</button>
+        <div class="menu-artist-section">
+          <div class="menu-artist-info">
+            <h2>لا تسأل عشان تسأل</h2>
+            <p class="menu-artist-subtitle">Don't Ask to Ask</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="menu-tracks-section">
+        <h3 class="menu-tracks-title">By SkaiTo & Ai Girl</h3>
+        <div class="language-options">
+          <div class="language-option" data-lang="arabic" data-audio="arabic.mp3">
+            <div class="language-option-number">1</div>
+            <div class="language-option-content">
+              <div class="language-text">العربية</div>
+              <div class="language-subtitle">Arabic</div>
+            </div>
+            <svg class="play-icon" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <div class="audio-progress-container">
+              <div class="audio-progress-bar">
+                <div class="audio-progress-fill"></div>
+              </div>
+            </div>
+          </div>
+          <div class="language-option" data-lang="english" data-audio="english.mp3">
+            <div class="language-option-number">2</div>
+            <div class="language-option-content">
+              <div class="language-text">English</div>
+              <div class="language-subtitle">الانجليزية</div>
+            </div>
+            <svg class="play-icon" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <div class="audio-progress-container">
+              <div class="audio-progress-bar">
+                <div class="audio-progress-fill"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mini-player" id="miniPlayer">
+        <div class="mini-player-content">
+          <div class="mini-player-info">
+            <div class="mini-player-title" id="miniPlayerTitle">Select a track</div>
+            <div class="mini-player-subtitle" id="miniPlayerSubtitle">Choose an audio version</div>
+          </div>
+          <div class="mini-player-controls">
+            <button class="mini-player-btn" id="miniPlayerPlayPause">▶</button>
+          </div>
+        </div>
+        <div class="mini-player-progress">
+          <div class="mini-player-progress-bar" id="miniPlayerProgressBar">
+            <div class="mini-player-progress-fill" id="miniPlayerProgressFill"></div>
+          </div>
+          <div class="mini-player-time">
+            <span id="miniPlayerCurrentTime">0:00</span>
+            <span id="miniPlayerTotalTime">0:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="content-wrapper">
     <div class="flip-card">
       <div class="flip-card-inner">
         <div class="flip-card-front">
-    <h1>لا تسأل لتسأل، فقط اسأل</h1>
+    <h1>ياخي لا تسأل عشان تسأل</h1>
     <p>
-      بين الحين والآخر يأتي أحدهم في غرف الدردشة قائلاً شيء مشابه لـ  :
+      في مرات يجيك شخص شوي اهبل يقلك :
     </p>
     <blockquote>
       <span class="name">فلان:</span>
       <p class="message">
-        هل هناك محترفين جافا هنا؟
+        هل في حد بيعرف يبرمج جافا محترف هون؟
       </p>
     </blockquote>
     <p>
-      هذه الطريقة سيئة، لأسباب عدة. ما يقصده الشخص
-      <em> في الحقيقة </em>
+    طبعا هون الطريقة سيئة كتير، لأنو بالحقيقة  
+      <em> الي بيقصده</em>
       هو
     </p>
     <blockquote>
       <span class="name">فلان:</span>
       <p class="message">
-        هل هناك أي محترف جافا يقبل مساعدتي في حل المشكلة، مهما كانت، حتى ولو لم تكن لها علاقة بجافا أو إن كان هناك أي شخص لايعرف شيئاً عن الجافا يستطيع حل مشكلتي؟
-      </p>
+هل في حدا محترف جافا ممكن يساعدني أحل المشكلة، أيّاً كانت؟ حتى لو ما إلها علاقة بجافا، أو حتى لو ما بعرف بالجافا بس يقدر يحلها؟  </p>
     </blockquote>
     <p>
-      هنالك عدة أسباب تجعل الذين يمتلكون الخبرة لايجيبوا عن سؤالك. سؤالك يسأل أكثر مما تظن.
+      طبعا هون بتلاقي انو في الف سبب بتخلي الي عندهم خبرة والمبرمجين ما بردو عليك
     </p>
     <p>
-      أنت تسأل الناس لتحملهم المسؤولية. أنت تختبر ثقة الناس في قدراتهم. أنت أيضاً تمنع أشخاصاً آخرين من الإجابة بلا ضرورة.
-    </p>
+اول شي انت بتسأل الناس لحتى تحملهم مسؤولية وبتختبر الناس بقدراتهم نوعا ما وكمان من غبائك ممكن تمنع ناس ثانيين من الاجابة بدون اي ضرورة    </p>
     <p>
-      بدلاً من ذلك، يمكن رؤية سؤالك على أنه...
-    </p>
+فـ ممكن كمان نشوفه على شكل :    </p>
     <blockquote>
       <span class="name">فلان:</span>
       <p class="message">
-        لدي سؤال حول الجافا لكني أشعر بالكسل لأقوم بصياغته على شكل كلمات إلا إذا كان بالقناة شخص قد يكون قادراَ على الإجابة عنه.
-      </p>
+عندي سؤال عن الجافا بس بحس بالكسل لحتى اشرحلكم ياه بس لو في حد كثير بيفهم بالجافا ممكن احكيه لو في حد يقدر يساعدني يعني      </p>
     </blockquote>
     <p>
-      ... إنه مجرد كسل. إن لم تكن راغباً بالقيام بأي عمل لحل مشكلتك، فلماذا يجب علينا؟
-    </p>
+يا حبيبي انت هيك بس مجرد كسول , لو انك ما بتعمل شي يوصلك لحل المشكلة فـ ليش نحن لازم اصلا ؟    </p>
     <p>
-      الحل هو عدم السؤال لسؤال آخر، اسأل مباشرةً. من غير المرجح أن يجيب شخص ما على "سؤال لسؤال آخر"، لكن وصفك للمشكلة قد يجذب انتباه العديد من القادرين عن الإجابة.
-    </p>
+الحل هو انك بكل بساطة لا تسأل سؤال عشان تسأل سؤال ثاني , يعني انت اكيد مانك متخيل يجيك شخص ويجاوبك حتى يرجع يجاوبك على السؤال الرئيسي , بس لو انك جبت الموضوع من البداية وحكيت مشكلتك رح تزيد فرصة انو يردو عليك المبرمجين ويساعدوك    </p>
     <p>
-      لذلك للتلخيص، لا تسأل
-      <em>"هل هناك أي خبراء جافا؟"</em>،
-      بل اسأل
-      <em>"كيف يمكنني حل [المشكلة الفلانية] باستعمال جافا و [التفاصيل أخرى]؟"</em>
+مختصر الكلام، لا تسأل
+      <em>"هل في حد بيعرف جافا ؟"</em>،
+      بكل بساطة اسأل
+      <em>"مرحبا كيف بقدر [المشكلة الفلانية] عن طريق الجافا و [التفاصيل الثانية]؟"</em>
     </p>
         </div>
         
@@ -1130,6 +1866,7 @@
     flipCard.addEventListener('click', (e) => {
       if (isMobileDevice && !isScrolling) {
         e.preventDefault();
+        e.stopPropagation();
         isFlipped = !isFlipped;
         flipCard.classList.toggle('flipped', isFlipped);
       }
@@ -1155,37 +1892,45 @@
     flipCard.addEventListener('touchend', (e) => {
       if (!isScrolling) {
         e.preventDefault();
+        e.stopPropagation();
         isFlipped = !isFlipped;
         flipCard.classList.toggle('flipped', isFlipped);
       }
     });
     
     let ticking = false;
-    let isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+    const isMobile = isMobileDevice;
     
     function updateParallax() {
       if (isMobile) {
         return;
       }
       
-      const scrolled = window.pageYOffset;
-      const layers = document.querySelectorAll('.parallax-layer');
-      const particles = document.querySelectorAll('.particle');
-      
-      layers.forEach((layer, index) => {
-        const speed = (index + 1) * 0.1;
-        const yPos = -(scrolled * speed);
-        layer.style.transform = `translate3d(0, ${yPos}px, 0)`;
-      });
-      
-      particles.forEach((particle, index) => {
-        const speed = (index + 1) * 0.05;
-        const yPos = -(scrolled * speed);
-        const xPos = Math.sin(scrolled * 0.001 + index) * 10;
-        particle.style.transform = `translate3d(${xPos}px, ${yPos}px, 0)`;
-      });
-      
-      ticking = false;
+      try {
+        const scrolled = window.pageYOffset;
+        const layers = document.querySelectorAll('.parallax-layer');
+        const particles = document.querySelectorAll('.particle');
+        
+        requestAnimationFrame(() => {
+          layers.forEach((layer, index) => {
+            const speed = (index + 1) * 0.1;
+            const yPos = -(scrolled * speed);
+            layer.style.transform = `translate3d(0, ${yPos}px, 0)`;
+          });
+          
+          particles.forEach((particle, index) => {
+            const speed = (index + 1) * 0.05;
+            const yPos = -(scrolled * speed);
+            const xPos = Math.sin(scrolled * 0.001 + index) * 10;
+            particle.style.transform = `translate3d(${xPos}px, ${yPos}px, 0)`;
+          });
+        });
+        
+        ticking = false;
+      } catch (error) {
+        console.error('Error updating parallax:', error);
+        ticking = false;
+      }
     }
     
     window.addEventListener('scroll', () => {
@@ -1213,29 +1958,41 @@
     });
     
     function showCustomContextMenu(e) {
-      const x = e.clientX;
-      const y = e.clientY;
-      
-      customContextMenu.style.left = x + 'px';
-      customContextMenu.style.top = y + 'px';
-      
-      const rect = customContextMenu.getBoundingClientRect();
-      const viewportWidth = window.innerWidth;
-      const viewportHeight = window.innerHeight;
-      
-      if (x + rect.width > viewportWidth) {
-        customContextMenu.style.left = (viewportWidth - rect.width - 10) + 'px';
+      try {
+        if (!customContextMenu) return;
+        
+        const x = e.clientX;
+        const y = e.clientY;
+        
+        customContextMenu.style.left = x + 'px';
+        customContextMenu.style.top = y + 'px';
+        
+        const rect = customContextMenu.getBoundingClientRect();
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+        
+        if (x + rect.width > viewportWidth) {
+          customContextMenu.style.left = (viewportWidth - rect.width - 10) + 'px';
+        }
+        
+        if (y + rect.height > viewportHeight) {
+          customContextMenu.style.top = (viewportHeight - rect.height - 10) + 'px';
+        }
+        
+        customContextMenu.classList.add('show');
+      } catch (error) {
+        console.error('Error showing custom context menu:', error);
       }
-      
-      if (y + rect.height > viewportHeight) {
-        customContextMenu.style.top = (viewportHeight - rect.height - 10) + 'px';
-      }
-      
-      customContextMenu.classList.add('show');
     }
     
     function hideCustomContextMenu() {
-      customContextMenu.classList.remove('show');
+      try {
+        if (customContextMenu) {
+          customContextMenu.classList.remove('show');
+        }
+      } catch (error) {
+        console.error('Error hiding custom context menu:', error);
+      }
     }
     
     const birthdayPopup = document.getElementById('birthdayPopup');
@@ -1250,7 +2007,7 @@
         hoursLabel: "ساعات",
         minutesLabel: "دقائق",
         secondsLabel: "ثواني",
-        currentAgePrefix: "العمر الحالي: ",
+        currentAgePrefix: "العمر: ",
         currentAgeSuffix: " سنة",
         happyBirthday: "عيد ميلاد سعيد!"
       },
@@ -1260,125 +2017,533 @@
         hoursLabel: "Hours",
         minutesLabel: "Minutes",
         secondsLabel: "Seconds",
-        currentAgePrefix: "Current Age: ",
-        currentAgeSuffix: " years old",
+        currentAgePrefix: "Age: ",
+        currentAgeSuffix: " years",
         happyBirthday: "Happy Birthday!"
       }
     };
     
     function showBirthdayInfo() {
-      const photo = document.getElementById('profilePhoto');
-      const photoRect = photo.getBoundingClientRect();
-      
-      const isMobileCheck = window.innerWidth <= 768;
-      
-      if (isMobileCheck) {
-        birthdayPopup.style.left = '50%';
-        birthdayPopup.style.top = '50%';
-        birthdayPopup.style.transform = 'translate(-50%, -50%) scale(0.9)';
-      } else {
-        const popupX = photoRect.right + 20;
-        const popupY = photoRect.top - 50;
+      try {
+        const photo = document.getElementById('profilePhoto');
+        if (!photo || !birthdayPopup) return;
         
-        birthdayPopup.style.left = popupX + 'px';
-        birthdayPopup.style.top = popupY + 'px';
-        birthdayPopup.style.transform = 'translateY(0)';
+        const photoRect = photo.getBoundingClientRect();
+        
+        const isMobileCheck = window.innerWidth <= 768;
+        
+        if (isMobileCheck) {
+          birthdayPopup.style.left = '50%';
+          birthdayPopup.style.top = '50%';
+          birthdayPopup.style.transform = 'translate(-50%, -50%) scale(0.9)';
+        } else {
+          const popupX = photoRect.right + 20;
+          const popupY = photoRect.top - 50;
+          
+          birthdayPopup.style.left = popupX + 'px';
+          birthdayPopup.style.top = popupY + 'px';
+          birthdayPopup.style.transform = 'translateY(0)';
+        }
+        
+        birthdayPopup.classList.add('show');
+        
+        updateBirthdayCountdown();
+        if (countdownInterval) clearInterval(countdownInterval);
+        countdownInterval = setInterval(updateBirthdayCountdown, 1000);
+        
+        startLanguageSwitching();
+      } catch (error) {
+        console.error('Error showing birthday info:', error);
       }
-      
-      birthdayPopup.classList.add('show');
-      
-      updateBirthdayCountdown();
-      countdownInterval = setInterval(updateBirthdayCountdown, 1000);
-      
-      startLanguageSwitching();
     }
     
     function hideBirthdayPopup() {
-      birthdayPopup.classList.remove('show');
-      clearInterval(countdownInterval);
-      clearInterval(languageInterval);
+      try {
+        if (birthdayPopup) {
+          birthdayPopup.classList.remove('show');
+        }
+        if (countdownInterval) {
+          clearInterval(countdownInterval);
+          countdownInterval = null;
+        }
+        if (languageInterval) {
+          clearInterval(languageInterval);
+          languageInterval = null;
+        }
+      } catch (error) {
+        console.error('Error hiding birthday popup:', error);
+      }
     }
     
     function startLanguageSwitching() {
-      languageInterval = setInterval(() => {
-        isArabic = !isArabic;
+      try {
+        if (languageInterval) {
+          clearInterval(languageInterval);
+          languageInterval = null;
+        }
+        
         updateLanguageContent();
-      }, 10000);
-      
-      updateLanguageContent();
+        
+        setupLoadingBarLanguageSwitch();
+      } catch (error) {
+        console.error('Error starting language switching:', error);
+      }
+    }
+    
+    function setupLoadingBarLanguageSwitch() {
+      try {
+        const loadingBar = document.querySelector('.loading-bar');
+        if (!loadingBar) return;
+        
+        loadingBar.addEventListener('animationend', () => {
+          isArabic = !isArabic;
+          updateLanguageContent();
+          
+          setTimeout(() => {
+            loadingBar.style.animation = 'none';
+            loadingBar.offsetHeight; // Trigger reflow
+            loadingBar.style.animation = 'loading-progress 10s linear';
+          }, 100);
+        });
+      } catch (error) {
+        console.error('Error setting up loading bar language switch:', error);
+      }
     }
     
     function updateLanguageContent() {
-      const content = isArabic ? languageContent.arabic : languageContent.english;
-      
-      document.getElementById('birthdayDate').textContent = content.date;
-      
-      document.getElementById('daysLabel').textContent = content.daysLabel;
-      document.getElementById('hoursLabel').textContent = content.hoursLabel;
-      document.getElementById('minutesLabel').textContent = content.minutesLabel;
+      try {
+        const content = isArabic ? languageContent.arabic : languageContent.english;
+        
+        const birthdayDateEl = document.getElementById('birthdayDate');
+        const daysLabelEl = document.getElementById('daysLabel');
+        const hoursLabelEl = document.getElementById('hoursLabel');
+        const minutesLabelEl = document.getElementById('minutesLabel');
+        const secondsLabelEl = document.getElementById('secondsLabel');
+        
+        const elements = [birthdayDateEl, daysLabelEl, hoursLabelEl, minutesLabelEl, secondsLabelEl];
+        
+        elements.forEach(el => {
+          if (el) {
+            el.style.opacity = '0.3';
+            el.style.transform = 'scale(0.95)';
+          }
+        });
+        
+        setTimeout(() => {
+          if (birthdayDateEl) birthdayDateEl.textContent = content.date;
+          if (daysLabelEl) daysLabelEl.textContent = content.daysLabel;
+          if (hoursLabelEl) hoursLabelEl.textContent = content.hoursLabel;
+          if (minutesLabelEl) minutesLabelEl.textContent = content.minutesLabel;
+          if (secondsLabelEl) secondsLabelEl.textContent = content.secondsLabel;
+          
+          elements.forEach(el => {
+            if (el) {
+              el.style.opacity = '1';
+              el.style.transform = 'scale(1)';
+            }
+          });
+        }, 150);
+        
+      } catch (error) {
+        console.error('Error updating language content:', error);
+      }
     }
     
     function updateAgeText(content) {
       const currentAgeElement = document.getElementById('currentAge');
-      const now = new Date();
-      const currentYear = now.getFullYear();
-      const birthYear = 2006;
-      const currentAge = currentYear - birthYear;
+      if (!currentAgeElement) return;
       
-      let birthday = new Date(currentYear, 6, 20);
-      
-      if (birthday < now) {
-        birthday = new Date(currentYear + 1, 6, 20);
-      }
-      
-      const timeDiff = birthday.getTime() - now.getTime();
-      
-      if (timeDiff > 0) {
-        if (birthday.getFullYear() === currentYear) {
-          currentAgeElement.textContent = content.currentAgePrefix + (currentAge - 1) + content.currentAgeSuffix;
-        } else {
-          currentAgeElement.textContent = content.currentAgePrefix + currentAge + content.currentAgeSuffix;
+      try {
+        const now = new Date();
+        const currentYear = now.getFullYear();
+        const birthYear = 2006;
+        const currentAge = currentYear - birthYear;
+        
+        let birthday = new Date(currentYear, 6, 20);
+        
+        if (birthday < now) {
+          birthday = new Date(currentYear + 1, 6, 20);
         }
-      } else {
-        currentAgeElement.textContent = content.happyBirthday;
+        
+        const timeDiff = birthday.getTime() - now.getTime();
+        
+        if (timeDiff > 0) {
+          if (birthday.getFullYear() === currentYear) {
+            currentAgeElement.textContent = content.currentAgePrefix + (currentAge - 1) + content.currentAgeSuffix;
+          } else {
+            currentAgeElement.textContent = content.currentAgePrefix + currentAge + content.currentAgeSuffix;
+          }
+        } else {
+          currentAgeElement.textContent = content.happyBirthday;
+        }
+      } catch (error) {
+        console.error('Error updating age text:', error);
+        currentAgeElement.textContent = content.currentAgePrefix + '18' + content.currentAgeSuffix;
       }
     }
     
     function updateBirthdayCountdown() {
-      const now = new Date();
-      const currentYear = now.getFullYear();
-      
-      let birthday = new Date(currentYear, 6, 20);
-      
-      if (birthday < now) {
-        birthday = new Date(currentYear + 1, 6, 20);
-      }
-      
-      const timeDiff = birthday.getTime() - now.getTime();
-      
-      if (timeDiff > 0) {
-        const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+      try {
+        const now = new Date();
+        const currentYear = now.getFullYear();
         
-        document.getElementById('days').textContent = days;
-        document.getElementById('hours').textContent = hours;
-        document.getElementById('minutes').textContent = minutes;
-        document.getElementById('seconds').textContent = seconds;
+        let birthday = new Date(currentYear, 6, 20);
         
-        const content = isArabic ? languageContent.arabic : languageContent.english;
-        updateAgeText(content);
-      } else {
-        document.getElementById('days').textContent = '0';
-        document.getElementById('hours').textContent = '0';
-        document.getElementById('minutes').textContent = '0';
-        document.getElementById('seconds').textContent = '0';
+        if (birthday < now) {
+          birthday = new Date(currentYear + 1, 6, 20);
+        }
         
-        const content = isArabic ? languageContent.arabic : languageContent.english;
-        document.getElementById('currentAge').textContent = content.happyBirthday;
+        const timeDiff = birthday.getTime() - now.getTime();
+        
+        if (timeDiff > 0) {
+          const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+          
+          const daysEl = document.getElementById('days');
+          const hoursEl = document.getElementById('hours');
+          const minutesEl = document.getElementById('minutes');
+          const secondsEl = document.getElementById('seconds');
+          
+          if (daysEl) daysEl.textContent = days;
+          if (hoursEl) hoursEl.textContent = hours;
+          if (minutesEl) minutesEl.textContent = minutes;
+          if (secondsEl) secondsEl.textContent = seconds;
+          
+          const content = isArabic ? languageContent.arabic : languageContent.english;
+          updateAgeText(content);
+        } else {
+          const daysEl = document.getElementById('days');
+          const hoursEl = document.getElementById('hours');
+          const minutesEl = document.getElementById('minutes');
+          const secondsEl = document.getElementById('seconds');
+          const currentAgeEl = document.getElementById('currentAge');
+          
+          if (daysEl) daysEl.textContent = '0';
+          if (hoursEl) hoursEl.textContent = '0';
+          if (minutesEl) minutesEl.textContent = '0';
+          if (secondsEl) secondsEl.textContent = '0';
+          
+          const content = isArabic ? languageContent.arabic : languageContent.english;
+          if (currentAgeEl) currentAgeEl.textContent = content.happyBirthday;
+          
+          updateLanguageContent();
+        }
+      } catch (error) {
+        console.error('Error updating birthday countdown:', error);
       }
     }
+    
+    function cleanup() {
+      try {
+        if (countdownInterval) {
+          clearInterval(countdownInterval);
+          countdownInterval = null;
+        }
+        if (languageInterval) {
+          clearInterval(languageInterval);
+          languageInterval = null;
+        }
+      } catch (error) {
+        console.error('Error during cleanup:', error);
+      }
+    }
+    
+    window.addEventListener('beforeunload', cleanup);
+    
+    let currentAudio = null;
+    let isMenuOpen = false;
+    let isPlaying = false;
+    let currentTrack = null;
+    
+    const languageToggleBtn = document.getElementById('languageToggleBtn');
+    const languageMenu = document.getElementById('languageMenu');
+    const menuCloseBtn = document.getElementById('menuCloseBtn');
+    const languageOptions = document.querySelectorAll('.language-option');
+    
+    const miniPlayer = document.getElementById('miniPlayer');
+    const miniPlayerTitle = document.getElementById('miniPlayerTitle');
+    const miniPlayerSubtitle = document.getElementById('miniPlayerSubtitle');
+    const miniPlayerPlayPause = document.getElementById('miniPlayerPlayPause');
+    const miniPlayerStop = document.getElementById('miniPlayerStop');
+    const miniPlayerProgressBar = document.getElementById('miniPlayerProgressBar');
+    const miniPlayerProgressFill = document.getElementById('miniPlayerProgressFill');
+    const miniPlayerCurrentTime = document.getElementById('miniPlayerCurrentTime');
+    const miniPlayerTotalTime = document.getElementById('miniPlayerTotalTime');
+    
+    if (languageToggleBtn && languageMenu) {
+      languageToggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        isMenuOpen = !isMenuOpen;
+        languageMenu.classList.toggle('show', isMenuOpen);
+      });
+    }
+    
+    window.addEventListener('load', () => {
+      if (languageMenu) {
+        isMenuOpen = true;
+        languageMenu.classList.add('show');
+      }
+    });
+    
+    if (menuCloseBtn) {
+      menuCloseBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (!isPlaying) {
+          isMenuOpen = false;
+          languageMenu.classList.remove('show');
+        }
+      });
+    }
+    
+    const languageButtonContainer = document.querySelector('.language-button-container');
+    document.addEventListener('click', (e) => {
+      if (isMenuOpen && !languageMenu.contains(e.target) && !languageToggleBtn.contains(e.target) && !languageButtonContainer.contains(e.target)) {
+        if (!isPlaying) {
+          isMenuOpen = false;
+          languageMenu.classList.remove('show');
+        }
+      }
+    });
+    
+    languageOptions.forEach(option => {
+      option.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const audioFile = option.getAttribute('data-audio');
+        const language = option.getAttribute('data-lang');
+        const languageText = option.querySelector('.language-text').textContent;
+        const languageSubtitle = option.querySelector('.language-subtitle').textContent;
+        
+        if (currentAudio) {
+          currentAudio.pause();
+          currentAudio.currentTime = 0;
+          document.querySelectorAll('.language-option.playing').forEach(el => {
+            el.classList.remove('playing');
+            el.querySelector('.audio-progress-container').classList.remove('show');
+          });
+        }
+        
+        if (audioFile) {
+          currentAudio = new Audio(audioFile);
+          currentAudio.volume = 0.8;
+          currentTrack = option;
+          isPlaying = true;
+          
+          option.classList.add('playing');
+          const progressContainer = option.querySelector('.audio-progress-container');
+          if (progressContainer) progressContainer.classList.add('show');
+          
+          if (miniPlayer) miniPlayer.classList.add('show');
+          if (miniPlayerTitle) miniPlayerTitle.textContent = languageText;
+          if (miniPlayerSubtitle) miniPlayerSubtitle.textContent = languageSubtitle;
+          if (miniPlayerPlayPause) miniPlayerPlayPause.textContent = '⏸';
+          
+          currentAudio.addEventListener('loadedmetadata', () => {
+            console.log('Audio metadata loaded, duration:', currentAudio.duration);
+            console.log('Formatted duration:', formatTime(currentAudio.duration));
+            if (miniPlayerTotalTime) {
+              miniPlayerTotalTime.textContent = formatTime(currentAudio.duration);
+              console.log('Set mini player total time to:', miniPlayerTotalTime.textContent);
+            }
+          });
+          
+          currentAudio.play().then(() => {
+            console.log(`Playing ${language} audio`);
+            console.log('Audio duration at play time:', currentAudio.duration);
+            if (miniPlayerCurrentTime) miniPlayerCurrentTime.textContent = '0:00';
+            
+            if (currentAudio.duration && miniPlayerTotalTime) {
+              console.log('Setting total time from duration:', currentAudio.duration);
+              miniPlayerTotalTime.textContent = formatTime(currentAudio.duration);
+            } else if (miniPlayerTotalTime) {
+              console.log('Duration not available, setting to 0:00');
+              miniPlayerTotalTime.textContent = '0:00';
+            }
+            
+            updateAudioProgress(option);
+            updateMiniPlayerProgress();
+          }).catch(error => {
+            console.error('Error playing audio:', error);
+            option.classList.remove('playing');
+            const progressContainer = option.querySelector('.audio-progress-container');
+            if (progressContainer) progressContainer.classList.remove('show');
+            if (miniPlayer) miniPlayer.classList.remove('show');
+            isPlaying = false;
+          });
+          
+          currentAudio.addEventListener('ended', () => {
+            option.classList.remove('playing');
+            const progressContainer = option.querySelector('.audio-progress-container');
+            if (progressContainer) progressContainer.classList.remove('show');
+            if (miniPlayer) miniPlayer.classList.remove('show');
+            if (miniPlayerPlayPause) miniPlayerPlayPause.textContent = '▶';
+            currentAudio = null;
+            isPlaying = false;
+          });
+          
+          currentAudio.addEventListener('error', (e) => {
+            console.error('Audio error:', e);
+            option.classList.remove('playing');
+            const progressContainer = option.querySelector('.audio-progress-container');
+            if (progressContainer) progressContainer.classList.remove('show');
+            if (miniPlayer) miniPlayer.classList.remove('show');
+            currentAudio = null;
+            isPlaying = false;
+          });
+        }
+      });
+    });
+    
+    function updateAudioProgress(option) {
+      if (!currentAudio) return;
+      
+      const progressFill = option.querySelector('.audio-progress-fill');
+      const currentTimeEl = option.querySelector('.current-time');
+      const totalTimeEl = option.querySelector('.total-time');
+      
+      if (currentAudio.duration && totalTimeEl) {
+        const totalTime = formatTime(currentAudio.duration);
+        totalTimeEl.textContent = totalTime;
+      }
+      
+      const updateProgress = () => {
+        if (currentAudio && !currentAudio.paused) {
+          const progress = (currentAudio.currentTime / currentAudio.duration) * 100;
+          if (progressFill) progressFill.style.width = progress + '%';
+          if (currentTimeEl) currentTimeEl.textContent = formatTime(currentAudio.currentTime);
+          requestAnimationFrame(updateProgress);
+        }
+      };
+      
+      updateProgress();
+    }
+    
+    function updateMiniPlayerProgress() {
+      if (!currentAudio || !miniPlayerProgressFill || !miniPlayerCurrentTime || !miniPlayerTotalTime) return;
+      
+      const updateProgress = () => {
+        if (currentAudio && !currentAudio.paused && currentAudio.duration) {
+          const progress = (currentAudio.currentTime / currentAudio.duration) * 100;
+          if (miniPlayerProgressFill) miniPlayerProgressFill.style.width = progress + '%';
+          if (miniPlayerCurrentTime) {
+            const currentTime = formatTime(currentAudio.currentTime);
+            miniPlayerCurrentTime.textContent = currentTime;
+          }
+          requestAnimationFrame(updateProgress);
+        }
+      };
+      
+      updateProgress();
+    }
+    
+    if (miniPlayerPlayPause) {
+      miniPlayerPlayPause.addEventListener('click', () => {
+        if (currentAudio) {
+          if (isPlaying) {
+            currentAudio.pause();
+            if (miniPlayerPlayPause) miniPlayerPlayPause.textContent = '▶';
+            isPlaying = false;
+          } else {
+            currentAudio.play().then(() => {
+              if (miniPlayerPlayPause) miniPlayerPlayPause.textContent = '⏸';
+              isPlaying = true;
+              updateMiniPlayerProgress();
+            }).catch(error => {
+              console.error('Error playing audio:', error);
+            });
+          }
+        }
+      });
+    }
+    
+    if (miniPlayerStop) {
+      miniPlayerStop.addEventListener('click', () => {
+        if (currentAudio) {
+          currentAudio.pause();
+          currentAudio.currentTime = 0;
+          if (miniPlayerPlayPause) miniPlayerPlayPause.textContent = '▶';
+          if (miniPlayerProgressFill) miniPlayerProgressFill.style.width = '0%';
+          if (miniPlayerCurrentTime) miniPlayerCurrentTime.textContent = '0:00';
+          isPlaying = false;
+          
+          if (currentTrack) {
+            currentTrack.classList.remove('playing');
+            const progressContainer = currentTrack.querySelector('.audio-progress-container');
+            if (progressContainer) progressContainer.classList.remove('show');
+          }
+          
+          if (miniPlayer) miniPlayer.classList.remove('show');
+          currentAudio = null;
+          currentTrack = null;
+        }
+      });
+    }
+    
+    if (miniPlayerProgressBar) {
+      miniPlayerProgressBar.addEventListener('click', (e) => {
+        if (currentAudio && currentAudio.duration) {
+          try {
+            const rect = miniPlayerProgressBar.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            const percentage = Math.max(0, Math.min(1, clickX / rect.width));
+            const newTime = percentage * currentAudio.duration;
+            currentAudio.currentTime = newTime;
+          } catch (error) {
+            console.error('Error seeking audio:', error);
+          }
+        }
+      });
+    }
+    
+    function formatTime(seconds) {
+      if (isNaN(seconds) || !isFinite(seconds) || seconds < 0) {
+        return '0:00';
+      }
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${mins}:${secs.toString().padStart(2, '0')}`;
+    }
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isMenuOpen) {
+        if (!isPlaying) {
+          isMenuOpen = false;
+          languageMenu.classList.remove('show');
+        }
+      }
+    });
+    
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden && currentAudio) {
+        currentAudio.pause();
+        isPlaying = false;
+        if (miniPlayerPlayPause) miniPlayerPlayPause.textContent = '▶';
+        document.querySelectorAll('.language-option.playing').forEach(el => {
+          el.classList.remove('playing');
+          const progressContainer = el.querySelector('.audio-progress-container');
+          if (progressContainer) progressContainer.classList.remove('show');
+        });
+      }
+    });
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      try {
+        const elements = [
+          'flipCard', 'customContextMenu', 'birthdayPopup', 'profilePhoto', 'languageToggleBtn', 'languageMenu'
+        ];
+        
+        elements.forEach(elementName => {
+          if (!window[elementName] && !document.getElementById(elementName)) {
+            console.warn(`Element ${elementName} not found`);
+          }
+        });
+      } catch (error) {
+        console.error('Error during initialization:', error);
+      }
+    });
     
   </script>
 </body>
