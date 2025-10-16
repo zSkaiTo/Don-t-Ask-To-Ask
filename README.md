@@ -12,7 +12,6 @@
 الموقع هذا معمول عشان يوقف الأسئلة الغبية
 ويعلم الناس كيف يسألوا صح
 
-Bro, the idea’s simple:  
 Don’t ask *“Can I ask something?”* just **ask it.**  
 Nobody got time for that “may I ask” nonsense.
 
