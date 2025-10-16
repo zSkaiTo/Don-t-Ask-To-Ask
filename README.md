@@ -1,9 +1,6 @@
 #  Don't Ask to Ask
 # لا تسأل عشان تسأل
 
-This project exists because I got tired of people asking dumb things.
-
-
 الفكرة بسيطة يا صاحبي  
 بدل ما تسأل "عندي سؤال؟" أو "ممكن أطلب مساعدة؟"  
 **اسأل السؤال على طول.**  
